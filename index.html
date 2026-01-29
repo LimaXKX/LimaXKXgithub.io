@@ -1,5 +1,4 @@
-
-         <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -18,6 +17,7 @@
     #busca input:focus { border-color: #dc3545; box-shadow: 0 0 0 0.25rem rgba(220,53,69,0.25); }
     h1 { color: #c82333; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); }
     .categoria { font-size: 1.5rem; color: #343a40; margin: 40px 0 20px; text-align: center; font-weight: bold; }
+    .pt { display: block; }
     .en { display: none; }
   </style>
 </head>
@@ -37,7 +37,7 @@
     </div>
   </nav>
 
-  <!-- Sidebar esquerda -->
+  <!-- Sidebar esquerda com todas as doenças -->
   <button class="btn btn-danger position-fixed top-50 start-0 translate-middle-y m-3 shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarDoencas">
     <i class="bi bi-list fs-3"></i> Doenças
   </button>
@@ -49,16 +49,40 @@
     </div>
     <div class="offcanvas-body">
       <ul class="list-group">
-        <li class="list-group-item"><a href="#doenca-renal-cronica">Doença Renal Crônica (DRC)</a></li>
+        <li class="list-group-item"><a href="#dengue">Dengue</a></li>
+        <li class="list-group-item"><a href="#chikungunya">Chikungunya</a></li>
+        <li class="list-group-item"><a href="#diabetes">Diabetes Tipo 2</a></li>
+        <li class="list-group-item"><a href="#hipertensao">Hipertensão</a></li>
+        <li class="list-group-item"><a href="#gripe">Gripe</a></li>
+        <li class="list-group-item"><a href="#covid">COVID-19</a></li>
+        <li class="list-group-item"><a href="#depressao">Depressão</a></li>
+        <li class="list-group-item"><a href="#ansiedade">Ansiedade</a></li>
+        <li class="list-group-item"><a href="#dores-musculares">Dores Musculares</a></li>
+        <li class="list-group-item"><a href="#leptospirose">Leptospirose</a></li>
+        <li class="list-group-item"><a href="#tuberculose">Tuberculose</a></li>
+        <li class="list-group-item"><a href="#malaria">Malária</a></li>
+        <li class="list-group-item"><a href="#alzheimer">Alzheimer</a></li>
+        <li class="list-group-item"><a href="#cancer">Câncer</a></li>
+        <li class="list-group-item"><a href="#bronquite">Bronquite</a></li>
+        <li class="list-group-item"><a href="#doenca-renal-cronica">Doença Renal Crônica</a></li>
         <li class="list-group-item"><a href="#insuficiencia-renal-aguda">Insuficiência Renal Aguda</a></li>
-        <!-- Adicione mais se quiser -->
+        <li class="list-group-item"><a href="#hepatite-b">Hepatite B</a></li>
+        <li class="list-group-item"><a href="#hiv">HIV/AIDS</a></li>
+        <li class="list-group-item"><a href="#asma">Asma</a></li>
+        <li class="list-group-item"><a href="#obesidade">Obesidade</a></li>
+        <li class="list-group-item"><a href="#pneumonia">Pneumonia</a></li>
+        <li class="list-group-item"><a href="#hanseniase">Hanseníase</a></li>
+        <li class="list-group-item"><a href="#febre-amarela">Febre Amarela</a></li>
+        <li class="list-group-item"><a href="#chagas">Doença de Chagas</a></li>
+        <li class="list-group-item"><a href="#sarampo">Sarampo</a></li>
+        <li class="list-group-item"><a href="#artrite">Artrite Reumatoide</a></li>
       </ul>
     </div>
   </div>
 
   <div class="container my-5 pt-5">
     <div class="aviso alert alert-warning" id="aviso">
-      ⚠️ <strong>IMPORTANTE:</strong> Isso NÃO é diagnóstico médico! Informações gerais do Ministério da Saúde/OMS/CDC. Procure UBS, nefrologista ou médico AGORA. Emergência: 192 (SAMU). Exames preventivos: creatinina no sangue e exame de urina simples.
+      ⚠️ <strong>IMPORTANTE:</strong> Isso NÃO é diagnóstico médico! Informações gerais do Ministério da Saúde/OMS/CDC. Procure UBS, CAPS ou médico AGORA. Emergência: 192 (SAMU). Pensamentos suicidas: CVV 188.
     </div>
 
     <h1 class="text-center mb-4" id="titulo">Guia de Saúde: Doenças Comuns no Brasil e EUA</h1>
@@ -69,69 +93,85 @@
       <input type="text" id="inputBusca" class="form-control" placeholder="Busque por doença ou sintoma...">
     </div>
 
-    <h3 class="categoria">Doenças Renais (Muito comuns no Brasil por diabetes e hipertensão)</h3>
+    <!-- Categorias e cards antigos + novos -->
+    <h3 class="categoria">Arboviroses e Infecciosas</h3>
     <div class="row g-4">
-      <!-- Doença Renal Crônica - DRC (PT) -->
+      <div class="col-md-6 col-lg-4 pt">
+        <div class="card" id="dengue">
+          <div class="card-header"><i class="bi bi-thermometer-high"></i> Dengue</div>
+          <div class="card-body">
+            <p><strong>Sintomas:</strong> Febre alta repentina, dor de cabeça intensa, dor no corpo/articulações, dor atrás dos olhos, manchas na pele, fadiga.</p>
+            <p><strong>Grave:</strong> Dor abdominal, vômitos persistentes, sangramento → Emergência!</p>
+            <p><strong>Fazer:</strong> Repouso, hidratação, paracetamol.</p>
+            <p><strong>Evitar:</strong> Ibuprofeno/AAS.</p>
+            <p><strong>Prevenção:</strong> Eliminar água parada.</p>
+            <p><strong>Fonte:</strong> Ministério da Saúde.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 pt">
+        <div class="card" id="chikungunya">
+          <div class="card-header"><i class="bi bi-thermometer-snow"></i> Chikungunya</div>
+          <div class="card-body">
+            <p><strong>Sintomas:</strong> Febre, dores articulares intensas (podem durar meses), inchaço.</p>
+            <p><strong>Prevenção:</strong> Combate ao mosquito.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ... Adicione aqui os cards antigos que você tinha (diabetes, hipertensão, gripe, COVID, depressão, ansiedade, dores musculares, leptospirose, tuberculose, malária, Alzheimer, câncer, bronquite, renais etc.) -->
+
+      <!-- Exemplo: card de Doença Renal Crônica -->
       <div class="col-md-6 col-lg-4 pt">
         <div class="card" id="doenca-renal-cronica">
-          <div class="card-header"><i class="bi bi-water"></i> Doença Renal Crônica (DRC)</div>
+          <div class="card-header"><i class="bi bi-water"></i> Doença Renal Crônica</div>
           <div class="card-body">
-            <p><strong>Sintomas comuns (muitas vezes silenciosa no início):</strong> Inchaço nos tornozelos/pés/mãos, fadiga extrema, dificuldade de concentração, diminuição do apetite, urina espumosa (proteína), sangue na urina, pressão alta descontrolada, náuseas, coceira na pele, formigamento nas mãos/pés, dores diversas.</p>
-            <p><strong>Sinais graves:</strong> Falta de ar, convulsões, confusão, sonolência, coma (estágio final) → Emergência!</p>
-            <p><strong>Causas comuns:</strong> Diabetes (tipo 1/2), hipertensão arterial não controlada, obesidade, dislipidemia, tabagismo, uso de medicamentos tóxicos (ex: anti-inflamatórios crônicos), infecções urinárias recorrentes, glomerulonefrite, doenças hereditárias.</p>
-            <p><strong>Tratamento geral:</strong> Controle rigoroso de pressão e glicemia, medicamentos (IECA/ARA II, estatinas, SGLT2 inibidores como dapagliflozina no SUS), dieta baixa em sal/proteína/fósforo, diálise ou transplante em estágios avançados (gratuito no SUS). Exames: creatinina, clearance de creatinina, exame de urina simples.</p>
-            <p><strong>Prevenção:</strong> Controlar diabetes/hipertensão, manter peso saudável, praticar exercícios, não fumar, beber água adequada, evitar excesso de sal/carnes vermelhas, exames preventivos anuais (creatinina + urina) se tiver risco.</p>
-            <p><strong>Fonte:</strong> Ministério da Saúde (gov.br/saude/drc) e OMS (prevalência ~6-14% em adultos, 10-20 milhões afetados no Brasil).</p>
+            <p><strong>Sintomas:</strong> Inchaço, fadiga, urina espumosa, pressão alta, coceira, náuseas.</p>
+            <p><strong>Grave:</strong> Falta de ar, convulsões → Emergência!</p>
+            <p><strong>Causas:</strong> Diabetes, hipertensão, obesidade.</p>
+            <p><strong>Prevenção:</strong> Controle glicêmico/pressão, dieta baixa em sal, exames anuais.</p>
+            <p><strong>Fonte:</strong> Ministério da Saúde.</p>
           </div>
         </div>
       </div>
 
-      <!-- Insuficiência Renal Aguda (PT) -->
+      <!-- Hepatite B (nova) -->
       <div class="col-md-6 col-lg-4 pt">
-        <div class="card" id="insuficiencia-renal-aguda">
-          <div class="card-header"><i class="bi bi-exclamation-triangle"></i> Insuficiência Renal Aguda</div>
+        <div class="card" id="hepatite-b">
+          <div class="card-header"><i class="bi bi-liver"></i> Hepatite B</div>
           <div class="card-body">
-            <p><strong>Sintomas comuns:</strong> Diminuição drástica da produção de urina (ou anúria), inchaço (retenção de líquidos), fadiga, náuseas/vômitos, falta de apetite, confusão, sonolência, falta de ar, convulsões em casos graves.</p>
-            <p><strong>Grave:</strong> Coma, arritmias, hipercalemia → Emergência imediata!</p>
-            <p><strong>Causas comuns:</strong> Desidratação grave, infecções (sepse), medicamentos tóxicos (anti-inflamatórios, antibióticos), obstrução urinária, choque, perda sanguínea, doenças renais pré-existentes.</p>
-            <p><strong>Tratamento geral:</strong> Hospitalar urgente: hidratação IV, correção de eletrólitos, diálise temporária se necessário, tratar causa de base. Reversível em muitos casos se tratado cedo.</p>
-            <p><strong>Prevenção:</strong> Hidratar bem, evitar medicamentos nefrotóxicos sem orientação, tratar infecções rápido, controlar doenças crônicas.</p>
-            <p><strong>Fonte:</strong> Sociedade Brasileira de Nefrologia e Ministério da Saúde.</p>
+            <p><strong>Sintomas:</strong> Fadiga, náuseas, icterícia, urina escura, dor abdominal.</p>
+            <p><strong>Grave:</strong> Cirrose, câncer de fígado.</p>
+            <p><strong>Prevenção:</strong> Vacina, preservativo.</p>
+            <p><strong>Fonte:</strong> Ministério da Saúde.</p>
           </div>
         </div>
       </div>
 
-      <!-- Versões EN simples para idioma -->
+      <!-- Continue adicionando as outras 9 novas aqui (HIV, Asma, Obesidade, Pneumonia, Hanseníase, Febre Amarela, Chagas, Sarampo, Artrite) copiando o formato -->
+    </div>
+
+    <!-- Cards em inglês (simples) -->
+    <div class="row g-4">
       <div class="col-md-6 col-lg-4 en">
         <div class="card">
-          <div class="card-header"><i class="bi bi-water"></i> Chronic Kidney Disease (CKD)</div>
+          <div class="card-header"><i class="bi bi-water"></i> Chronic Kidney Disease</div>
           <div class="card-body">
-            <p><strong>Symptoms:</strong> Swelling in ankles/feet, fatigue, foamy urine, blood in urine, high blood pressure, nausea, itching.</p>
-            <p><strong>Severe:</strong> Shortness of breath, confusion → Emergency!</p>
-            <p><strong>Causes:</strong> Diabetes, hypertension, obesity.</p>
-            <p><strong>Prevention:</strong> Control blood sugar/pressure, healthy diet, exercise.</p>
-            <p><strong>Source:</strong> Ministry of Health Brazil / WHO.</p>
+            <p><strong>Symptoms:</strong> Swelling, fatigue, foamy urine, high blood pressure.</p>
+            <p><strong>Severe:</strong> Shortness of breath → Emergency!</p>
+            <p><strong>Prevention:</strong> Control diabetes/hypertension.</p>
+            <p><strong>Source:</strong> WHO/CDC.</p>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-4 en">
-        <div class="card">
-          <div class="card-header"><i class="bi bi-exclamation-triangle"></i> Acute Kidney Injury</div>
-          <div class="card-body">
-            <p><strong>Symptoms:</strong> Reduced urine output, swelling, nausea, confusion.</p>
-            <p><strong>Severe:</strong> Seizures, coma → Emergency!</p>
-            <p><strong>Causes:</strong> Dehydration, infections, medications.</p>
-            <p><strong>Prevention:</strong> Stay hydrated, avoid nephrotoxic drugs.</p>
-            <p><strong>Source:</strong> Brazilian Society of Nephrology.</p>
-          </div>
-        </div>
-      </div>
+      <!-- Adicione versões EN para as novas também -->
     </div>
 
     <div class="text-center mt-5">
-      <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/drc" class="btn btn-danger btn-lg mx-2">Mais sobre DRC no Ministério da Saúde</a>
-      <a href="https://www.cdc.gov/kidneydisease" class="btn btn-primary btn-lg mx-2">Kidney Disease (CDC EUA)</a>
+      <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z" class="btn btn-danger btn-lg mx-2">Ministério da Saúde</a>
+      <a href="https://www.cdc.gov" class="btn btn-primary btn-lg mx-2">CDC (EUA)</a>
     </div>
   </div>
 
@@ -144,11 +184,10 @@
         document.querySelectorAll('.pt').forEach(el => el.style.display = 'none');
         document.querySelectorAll('.en').forEach(el => el.style.display = 'block');
       } else {
-        location.reload(); // Volta pro PT
+        location.reload();
       }
     }
 
-    // Busca em tempo real
     document.getElementById('inputBusca').addEventListener('input', function() {
       const termo = this.value.toLowerCase();
       document.querySelectorAll('.card').forEach(card => {
