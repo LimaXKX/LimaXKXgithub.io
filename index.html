@@ -3,48 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Guia de Saúde: Diabetes, Dengue, Gripe e Mais</title>
+  <title>Guia de Saúde: Diabetes, Dengue, Gripe, Ansiedade e Mais</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <style>
-    body {
-      background: linear-gradient(to bottom, #e3f2fd, #f8f9fa);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    body { background: linear-gradient(to bottom, #e3f2fd, #f8f9fa); font-family: 'Segoe UI', sans-serif; }
     .navbar { background: linear-gradient(to right, #dc3545, #c82333); }
-    .aviso {
-      background: #fff3cd;
-      border: 3px solid #ffc107;
-      padding: 25px;
-      border-radius: 15px;
-      margin-bottom: 40px;
-      text-align: center;
-      font-weight: bold;
-      box-shadow: 0 4px 15px rgba(255,193,7,0.4);
-    }
-    .card {
-      border: none;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      transition: all 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 15px 30px rgba(220,53,69,0.3);
-    }
-    .card-header {
-      background: #dc3545;
-      color: white;
-      font-weight: bold;
-      padding: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .card-body { padding: 20px; }
+    .aviso { background: #fff3cd; border: 3px solid #ffc107; padding: 25px; border-radius: 15px; margin-bottom: 40px; text-align: center; font-weight: bold; box-shadow: 0 4px 15px rgba(255,193,7,0.4); }
+    .card { border: none; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+    .card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 15px 30px rgba(220,53,69,0.3); }
+    .card-header { background: #dc3545; color: white; font-weight: bold; padding: 15px; display: flex; align-items: center; gap: 10px; }
+    .card-body { padding: 20px; font-size: 0.95rem; line-height: 1.5; }
     #busca input:focus { border-color: #dc3545; box-shadow: 0 0 0 0.25rem rgba(220,53,69,0.25); }
     h1 { color: #c82333; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); }
+    .categoria { font-size: 1.5rem; color: #343a40; margin: 40px 0 20px; text-align: center; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -63,121 +35,168 @@
     </div>
   </nav>
 
+  <!-- Sidebar esquerda com lista de doenças -->
+  <button class="btn btn-danger position-fixed top-50 start-0 translate-middle-y m-3 shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarDoencas">
+    <i class="bi bi-list fs-3"></i> Doenças
+  </button>
+
+  <div class="offcanvas offcanvas-start bg-light" tabindex="-1" id="sidebarDoencas">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Lista de Doenças</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-group">
+        <li class="list-group-item"><a href="#dengue">Dengue</a></li>
+        <li class="list-group-item"><a href="#chikungunya">Chikungunya</a></li>
+        <li class="list-group-item"><a href="#diabetes">Diabetes Tipo 2</a></li>
+        <li class="list-group-item"><a href="#hipertensao">Hipertensão</a></li>
+        <li class="list-group-item"><a href="#gripe">Gripe (Influenza)</a></li>
+        <li class="list-group-item"><a href="#covid">COVID-19</a></li>
+        <li class="list-group-item"><a href="#depressao">Depressão</a></li>
+        <li class="list-group-item"><a href="#ansiedade">Ansiedade</a></li>
+        <li class="list-group-item"><a href="#dores-musculares">Dores Musculares / LER-DORT</a></li>
+        <li class="list-group-item"><a href="#leptospirose">Leptospirose</a></li>
+        <li class="list-group-item"><a href="#tuberculose">Tuberculose</a></li>
+      </ul>
+    </div>
+  </div>
+
   <div class="container my-5 pt-5">
     <div class="aviso alert alert-warning">
-      ⚠️ <strong>IMPORTANTE:</strong> Isso NÃO é diagnóstico médico nem substitui consulta! Informações gerais da OMS e Ministério da Saúde. Se sentir mal, vá à UBS, posto de saúde, SUS ou emergência AGORA! Ligue 192 se for grave.
+      ⚠️ <strong>IMPORTANTE:</strong> Isso NÃO é diagnóstico médico nem substitui consulta! Informações gerais do Ministério da Saúde e OMS. Procure UBS, CAPS (saúde mental), posto de saúde ou SUS AGORA. Emergência? Ligue 192 (SAMU). Pensamentos suicidas? Ligue CVV 188 (grátis, 24h).
     </div>
 
-    <h1 class="text-center mb-4">Guia de Saúde: Diabetes, Dengue, Gripe e Mais</h1>
-    <p class="text-center lead mb-5">Informações gerais sobre as doenças mais comuns no Brasil e no mundo. Busque ou clique para ver dicas, sintomas e prevenção.</p>
+    <h1 class="text-center mb-4">Guia de Saúde: Diabetes, Dengue, Gripe, Ansiedade e Mais</h1>
+    <p class="text-center lead mb-5">Detalhes completos sobre sintomas, causas, tratamento geral, prevenção e alertas graves. Sempre consulte um profissional de saúde!</p>
 
     <div class="input-group mb-5 shadow-sm" id="busca">
       <span class="input-group-text bg-danger text-white"><i class="bi bi-search"></i></span>
-      <input type="text" id="inputBusca" class="form-control" placeholder="Busque por doença ou sintoma (ex: diabetes, febre, dengue)...">
+      <input type="text" id="inputBusca" class="form-control" placeholder="Busque por doença ou sintoma (ex: depressão, dor muscular, dengue)...">
     </div>
 
+    <!-- Categoria: Arboviroses / Doenças por mosquito -->
+    <h3 class="categoria">Arboviroses e Doenças Infecciosas Comuns</h3>
     <div class="row g-4" id="listaDoencas">
-      <!-- Cards de doenças - chamativos e organizados -->
       <div class="col-md-6 col-lg-4">
-        <div class="card">
+        <div class="card" id="dengue">
           <div class="card-header"><i class="bi bi-thermometer-high"></i> Dengue</div>
           <div class="card-body">
-            <p><strong>Sintomas:</strong> Febre alta repentina, dor de cabeça forte, dor no corpo, manchas na pele.</p>
-            <p><strong>Grave:</strong> Dor abdominal intensa, vômitos constantes → Emergência!</p>
-            <p><strong>Fazer:</strong> Repouso, muito líquido, paracetamol.</p>
-            <p><strong>Evitar:</strong> Anti-inflamatórios (ibuprofeno etc.).</p>
-            <p><strong>Prevenção:</strong> Eliminar água parada, repelente.</p>
+            <p><strong>Sintomas comuns:</strong> Febre alta repentina (38-40°C), dor de cabeça intensa (pulsátil), dor muscular/articular forte ("febre quebra-ossos"), dor retro-orbital (atrás dos olhos), náuseas/vômitos, fadiga extrema, manchas vermelhas na pele (exantema maculopapular), leucopenia inicial.</p>
+            <p><strong>Sinais graves (alerta dengue grave):</strong> Dor abdominal contínua/intensa, vômitos persistentes (>3x em 24h), sangramento (gengiva, nariz, urina, fezes), acúmulo de líquidos (ascite, derrame pleural), letargia/irritabilidade, hipotensão, hepatomegalia dolorosa → Emergência imediata!</p>
+            <p><strong>Causas:</strong> Vírus dengue (sorotipos 1-4) transmitido por Aedes aegypti/Aedes albopictus.</p>
+            <p><strong>Tratamento geral:</strong> Repouso absoluto, hidratação oral abundante (2-3L/dia ou mais, com sais de reidratação), paracetamol (dose máxima 4g/dia adulto), monitoramento de plaquetas/hematócrito. Hospitalização se grave.</p>
+            <p><strong>Evitar:</strong> Anti-inflamatórios não esteroides (ibuprofeno, diclofenaco, AAS – risco hemorrágico grave), automedicação.</p>
+            <p><strong>Prevenção:</strong> Eliminar criadouros (água parada em vasos, pneus, calhas), repelente (DEET ou icaridina), telas nas janelas, roupas claras longas, fumacê em áreas endêmicas.</p>
+            <p><strong>Fonte:</strong> Ministério da Saúde (gov.br/saude/dengue) e OMS.</p>
           </div>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-header"><i class="bi bi-heart-pulse"></i> Diabetes Tipo 2</div>
-          <div class="card-body">
-            <p><strong>Sintomas:</strong> Sede excessiva, urina frequente, fadiga, visão embaçada.</p>
-            <p><strong>Fazer:</strong> Controle glicêmico, dieta, exercícios, medicamentos prescritos.</p>
-            <p><strong>Prevenção:</strong> Alimentação saudável, atividade física, controle de peso.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-header"><i class="bi bi-lungs"></i> Hipertensão Arterial</div>
-          <div class="card-body">
-            <p><strong>Sintomas:</strong> Muitas vezes silenciosa (dor de cabeça, tontura).</p>
-            <p><strong>Fazer:</strong> Medir pressão regular, remédios, dieta baixa em sal.</p>
-            <p><strong>Prevenção:</strong> Exercícios, não fumar, controlar estresse.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-header"><i class="bi bi-virus"></i> Gripe (Influenza)</div>
-          <div class="card-body">
-            <p><strong>Sintomas:</strong> Febre, tosse, dor de garganta, cansaço.</p>
-            <p><strong>Fazer:</strong> Repouso, líquidos, vacina anual.</p>
-            <p><strong>Prevenção:</strong> Vacina SUS, lavar mãos.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-header"><i class="bi bi-bandaid"></i> COVID-19</div>
-          <div class="card-body">
-            <p><strong>Sintomas:</strong> Febre, tosse, perda de olfato, fadiga.</p>
-            <p><strong>Fazer:</strong> Isolamento, vacina, procure médico.</p>
-            <p><strong>Prevenção:</strong> Vacinas em dia, máscaras em risco.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card">
+        <div class="card" id="chikungunya">
           <div class="card-header"><i class="bi bi-thermometer-snow"></i> Chikungunya</div>
           <div class="card-body">
-            <p><strong>Sintomas:</strong> Febre, dores articulares intensas (podem durar meses).</p>
-            <p><strong>Prevenção:</strong> Combate ao mosquito Aedes.</p>
+            <p><strong>Sintomas comuns:</strong> Febre alta súbita, artralgia intensa (dor articular incapacitante, simétrica, mãos/pés/pulsos/tornozelos), edema articular, mialgia, cefaleia, fadiga, exantema maculopapular, dor lombar.</p>
+            <p><strong>Crônico:</strong> Artrite persistente (>3 meses) em até 50% dos casos, dor crônica debilitante.</p>
+            <p><strong>Causas:</strong> Vírus chikungunya transmitido por Aedes.</p>
+            <p><strong>Tratamento geral:</strong> Sintomático: repouso, hidratação, paracetamol, AINEs com cautela (após fase febril), fisioterapia para dor crônica.</p>
+            <p><strong>Prevenção:</strong> Mesma da dengue (combate ao mosquito).</p>
+            <p><strong>Fonte:</strong> Ministério da Saúde e OMS.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categoria: Doenças Crônicas -->
+      <h3 class="categoria">Doenças Crônicas Comuns</h3>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card" id="diabetes">
+          <div class="card-header"><i class="bi bi-heart-pulse"></i> Diabetes Tipo 2</div>
+          <div class="card-body">
+            <p><strong>Sintomas comuns:</strong> Poliúria (urinar muito), polidipsia (sede excessiva), polifagia (fome constante), perda/ganho de peso inexplicado, fadiga, visão embaçada, infecções recorrentes (urina, pele), feridas que demoram a cicatrizar.</p>
+            <p><strong>Complicações graves:</strong> Cetoacidose (náuseas, respiração rápida), hipoglicemia (tremores, confusão), retinopatia, nefropatia, neuropatia, pé diabético.</p>
+            <p><strong>Causas:</strong> Resistência à insulina + deficiência relativa, obesidade, sedentarismo, genética, idade >45.</p>
+            <p><strong>Tratamento geral:</strong> Mudança de estilo de vida (dieta baixa em carboidratos refinados, exercício 150 min/semana), metformina/orais/injetáveis/insulina prescritos, monitoramento glicêmico (jejum <100 mg/dL, pós-prandial <140).</p>
+            <p><strong>Prevenção:</strong> Manter IMC <25, atividade física regular, dieta equilibrada, rastreio anual após 45 anos ou fatores de risco.</p>
+            <p><strong>Fonte:</strong> Ministério da Saúde e Federação Internacional de Diabetes.</p>
           </div>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-header"><i class="bi bi-water"></i> Leptospirose</div>
+        <div class="card" id="hipertensao">
+          <div class="card-header"><i class="bi bi-lungs"></i> Hipertensão Arterial</div>
           <div class="card-body">
-            <p><strong>Sintomas:</strong> Febre, dor muscular, olhos vermelhos (após água suja).</p>
-            <p><strong>Grave:</strong> Icterícia → Emergência!</p>
-            <p><strong>Prevenção:</strong> Evitar contato com enchentes sem proteção.</p>
+            <p><strong>Sintomas comuns:</strong> Muitas vezes assintomática ("assassina silenciosa"), cefaleia matinal, tontura, visão turva, epistaxe (sangramento nasal), dispneia.</p>
+            <p><strong>Complicações graves:</strong> Infarto, AVC, insuficiência cardíaca, renal, aneurisma aórtico.</p>
+            <p><strong>Causas:</strong> Essencial (90%): genética, sal excessivo, obesidade, sedentarismo, álcool, estresse; secundária (renal, endócrina).</p>
+            <p><strong>Tratamento geral:</strong> Meta <130/80 mmHg (ou <140/90), dieta DASH (baixa sal <5g/dia), exercício aeróbico 30 min/dia, perda de peso, medicamentos (IECA, betabloqueadores, diuréticos prescritos).</p>
+            <p><strong>Prevenção:</strong> Controle de peso, reduzir sal/álcool, não fumar, monitorar pressão regularmente.</p>
+            <p><strong>Fonte:</strong> Ministério da Saúde (34 milhões de brasileiros afetados).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categoria: Saúde Mental -->
+      <h3 class="categoria">Saúde Mental (Muito comum no Brasil)</h3>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card" id="depressao">
+          <div class="card-header"><i class="bi bi-brain"></i> Depressão</div>
+          <div class="card-body">
+            <p><strong>Sintomas comuns:</strong> Humor deprimido quase todo dia, perda de interesse/prazer (anedonia), fadiga/energia baixa, alterações sono/apetite/peso, lentidão psicomotora/agitação, culpa excessiva, dificuldade concentração, pensamentos de morte/suicídio.</p>
+            <p><strong>Grave:</strong> Ideação suicida ativa → Emergência (CVV 188 ou pronto-socorro).</p>
+            <p><strong>Causas:</strong> Genética, desequilíbrio neuroquímico (serotonina), estresse crônico, traumas, doenças crônicas.</p>
+            <p><strong>Tratamento geral:</strong> Psicoterapia (TCC), antidepressivos (ISRS como sertralina), suporte familiar, CAPS/UBS. Prevalência no Brasil ~15,5% ao longo da vida.</p>
+            <p><strong>Prevenção:</strong> Exercício, sono regular, rede social, reduzir álcool.</p>
+            <p><strong>Fonte:</strong> Ministério da Saúde e OMS.</p>
           </div>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-header"><i class="bi bi-lungs-fill"></i> Tuberculose (TB)</div>
+        <div class="card" id="ansiedade">
+          <div class="card-header"><i class="bi bi-cloud-lightning-rain"></i> Ansiedade Generalizada</div>
           <div class="card-body">
-            <p><strong>Sintomas:</strong> Tosse prolongada, febre, suor noturno, perda de peso.</p>
-            <p><strong>Fazer:</strong> Tratamento gratuito no SUS.</p>
-            <p><strong>Prevenção:</strong> Vacina BCG, ventilação.</p>
+            <p><strong>Sintomas comuns:</strong> Ansiedade/preocupação excessiva >6 meses, inquietação, fadiga, dificuldade concentração, irritabilidade, tensão muscular, distúrbio sono.</p>
+            <p><strong>Crises de pânico:</strong> Taquicardia, sudorese, tremores, medo de morrer/perder controle.</p>
+            <p><strong>Causas:</strong> Genética, estresse, traumas, desequilíbrio GABA/serotonina.</p>
+            <p><strong>Tratamento geral:</strong> TCC, antidepressivos/ansiolíticos prescritos, técnicas relaxamento (respiração diafragmática).</p>
+            <p><strong>Prevenção:</strong> Mindfulness, exercício, limite cafeína.</p>
+            <p><strong>Fonte:</strong> Ministério da Saúde (principal causa de afastamento mental).</p>
           </div>
         </div>
       </div>
 
-      <!-- Adicione mais copiando blocos: Zika, Malária, HIV, Febre Amarela, Hepatite, Obesidade etc. -->
+      <!-- Categoria: Dores Musculares -->
+      <h3 class="categoria">Dores Musculares e Relacionadas ao Trabalho</h3>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card" id="dores-musculares">
+          <div class="card-header"><i class="bi bi-bandaid"></i> Dores Musculares / LER-DORT</div>
+          <div class="card-body">
+            <p><strong>Sintomas comuns:</strong> Dor persistente em músculos/tendões/articulações (pescoço, ombros, punhos, costas), rigidez, formigamento, fraqueza, inchaço, piora com repetição.</p>
+            <p><strong>Causas comuns:</strong> Movimentos repetitivos (teclado, mouse), posturas fixas, vibração, estresse, falta de pausas.</p>
+            <p><strong>Tratamento geral:</strong> Repouso relativo, fisioterapia (alongamentos, TENS, exercícios), ergonomia, anti-inflamatórios prescritos, ginástica laboral.</p>
+            <p><strong>Evitar:</strong> Continuar atividade sem pausa (piora para crônica/incapacidade).</p>
+            <p><strong>Prevenção:</strong> Pausas a cada 50 min, ergonomia (ajuste cadeira/mesa), alongamentos diários, exercícios fortalecimento.</p>
+            <p><strong>Fonte:</strong> Ministério da Saúde (principal causa de afastamento laboral).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adicione mais cards aqui se quiser (ex: leptospirose, tuberculose) copiando o formato -->
     </div>
 
     <div class="text-center mt-5">
-      <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z" class="btn btn-danger btn-lg mx-2">Ministério da Saúde</a>
+      <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z" class="btn btn-danger btn-lg mx-2">Mais no Ministério da Saúde</a>
       <a href="https://www.who.int/health-topics" class="btn btn-primary btn-lg mx-2">OMS / WHO</a>
     </div>
   </div>
 
   <script>
-    // Busca em tempo real (melhor que botão)
+    // Busca em tempo real (filtra cards enquanto digita)
     document.getElementById('inputBusca').addEventListener('input', function() {
       const termo = this.value.toLowerCase();
       document.querySelectorAll('.card').forEach(card => {
@@ -188,12 +207,10 @@
 
     function mudarIdioma(lang) {
       if (lang === 'en') {
-        document.querySelector('.aviso').innerHTML = '⚠️ <strong>WARNING:</strong> This is NOT a medical diagnosis! General information from WHO/Ministry of Health. See a doctor or emergency NOW if unwell!';
-        document.querySelector('h1').innerText = 'Health Guide: Diabetes, Dengue, Flu and More';
-        document.querySelector('.lead').innerText = 'General info on common diseases in Brazil and worldwide. Search or click for symptoms, care and prevention.';
-        // Traduza cards manualmente se quiser versão full EN
+        document.querySelector('.aviso').innerHTML = '⚠️ <strong>WARNING:</strong> NOT medical diagnosis! General info from WHO/Ministry of Health. See doctor/emergency NOW!';
+        // Expanda se quiser tradução full dos cards
       } else {
-        location.reload(); // Volta pro português
+        location.reload();
       }
     }
   </script>
